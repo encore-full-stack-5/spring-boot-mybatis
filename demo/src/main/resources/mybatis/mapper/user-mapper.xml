@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- user-mapper.xml -->
+<!-- mapper 는 쿼리 치는 곳 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <insert id="addUser" parameterType="com.example.demo.domain.User">
+        insert into users(user_name, user_password, user_nickname)
+        values (#{name}, #{password}, #{nickname})
+    </insert>
+    <select id="findByUserName"
+            parameterType="string"
+            resultType="com.example.demo.domain.User">
+        select
+            user_id as id,
+            user_name as name,
+            user_password as password,
+            user_nickname as nickname
+        from
+            users
+        where
+            user_name = #{name}
+    </select>
+</mapper>
