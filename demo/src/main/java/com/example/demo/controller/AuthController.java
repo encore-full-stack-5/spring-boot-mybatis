@@ -5,9 +5,7 @@ import com.example.demo.dto.request.SignInRequest;
 import com.example.demo.dto.request.UserRequest;
 import com.example.demo.dto.response.SignInResponse;
 import com.example.demo.service.AuthService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
