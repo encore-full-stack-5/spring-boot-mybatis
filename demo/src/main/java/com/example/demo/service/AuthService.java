@@ -24,7 +24,11 @@ public class AuthService {
         if(!byUserName.isEmpty())
             throw new ExistUsernameException();
 //        없으면 insert
-        userMapper.addUser(req.toEntity());
+        User user = req.toEntity();
+        userMapper.addUser(user);
+        System.out.println(user.getId());
+
+        // 마지막에 넣은 거  찾는다
     }
     public SignInResponse signIn(SignInRequest req){
         List<User> findByName = userMapper.findByUserName(req.username());
