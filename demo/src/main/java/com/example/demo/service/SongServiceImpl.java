@@ -48,4 +48,9 @@ public class SongServiceImpl implements SongService {
     public Song findSongById(Long id) {
         return songMapper.findSongById(id);
     }
+
+    @Override
+    public List<Song> findSongByQuery(String query) {
+        return songMapper.findSongByQuery("%" + query + "%");
+    }
 }
