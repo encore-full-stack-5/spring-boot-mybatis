@@ -2,15 +2,13 @@ package com.example.demo.service;
 
 import com.example.demo.domain.Song;
 import com.example.demo.dto.request.SongRequest;
-import com.example.demo.mapper.SongMapper;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
-public class SongService {
-    private final SongMapper songMapper;
-    public void save(SongRequest req){
-        songMapper.insertSong(req.toEntity());
-    }
+import java.util.List;
+
+public interface SongService {
+    void save(SongRequest req);
+    List<Song> findAllSongs();
+    Song updateSong(Long id, SongRequest req);
+    void deleteSong(Long id);
+    Song findSongById(Long id);
 }
